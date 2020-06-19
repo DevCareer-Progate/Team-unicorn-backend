@@ -50,6 +50,39 @@ class ProfileController {
         next();
     }
 
+    updateProfile = (req, res, next) => {
+        const {firstName,lastName,isAdmin,country,state,city,address,image} = req.body;
+        Profile.findById(req.params.id)
+                .then(profile => {
+                    if (!profile){
+                        return res.status(403).json({status: 403, message: "User not found!"});
+                    }
+                    else{Profile.findByIdAndUpdate({_id: req.params.id}, req.body).then(
+                        () => {
+                            res.status(200).json({
+                                status: 200,
+                                data: {
+                                    '_id': req.params.id,
+                                    'firstName': req.body.firstName || profile.firstName,
+                                    'lastName': req.body.lastName || profile.lastName,
+                                    'country': req.body.country || profile.country,
+                                    'state': req.body.state || profile.state,
+                                    'city': req.body.city || profile.city,
+                                    'address': req.body.address || profile.address,
+                                    'image': req.body.image || profile.image,
+                                    'created_on': profile.created_on,  
+                                }
+                            });
+                        })
+                    }
+                })
+                .catch(err => res.status(404).json({
+                    status: 404,
+                    message: "An error occurred"
+                }));
+            next();
+    };
+
     deleteProfile(req, res, next) {
         const { _id } = req.params;
         Profile.findOneAndRemove(_id)
