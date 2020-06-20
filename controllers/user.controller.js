@@ -10,7 +10,7 @@ class UserController {
         const { firstName, lastName, email, username, password, isAdmin } = req.body;
 
         if (!firstName || !lastName || !email || !username || !password || !isAdmin) {
-            return res.status(200).json({ message: 'Please enter all fields' });
+            return res.status(400).json({ message: 'Please enter all fields' });
         }
 
         User.findOne({ email })
