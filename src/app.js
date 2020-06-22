@@ -3,6 +3,7 @@ import express from 'express';
 const app = express();
 
 import userRoute from '../routes/user.route';
+import profileRoute from '../routes/profile.route';
 
 import mongoose from 'mongoose';
 
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/', userRoute);
+app.use('/', profileRoute)
 
 const PORT = process.env.PORT || 4001;
 

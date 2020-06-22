@@ -87,7 +87,7 @@ class ProfileController {
         next();
     }
 
-    updateProfile = (req, res, next) => {
+    updateProfile(req, res, next) {
         const { firstName, lastName, isAdmin, country, state, city, address, image } = req.body;
         Profile.findById(req.params.id)
             .then(profile => {
