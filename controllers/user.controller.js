@@ -43,10 +43,10 @@ class UserController {
                                             status: 200,
                                             data: {
                                                 token,
-                                                id: newUser.id,
-                                                username: newUser.username,
-                                                email: newUser.email,
-                                                password: newUser.password
+                                                id: user.id,
+                                                username: user.username,
+                                                email: user.email,
+                                                password: user.password
                                             }
                                         })
                                     }
