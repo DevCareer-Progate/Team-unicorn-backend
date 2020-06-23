@@ -31,6 +31,31 @@ class gifController {
             })
     }
 
+    deleteGif(req, res) {
+        const _id = req.params.id;
+        Gif.findOneAndRemove(_id)
+            .then(gif => {
+                if (!gif) {
+                    return res.json({ message: 'There is no gif with the Id' });
+                }
+
+                res.json({
+                    status: 'success',
+                    data: {
+                        message: 'gif post successfully deleted'
+                    }
+                })
+            })
+            .catch(err => {
+                res.json({
+                    status: 'Failed',
+                    data: {
+                        message: 'gif can not be deleted',
+                        err
+                    }
+                })
+            })
+    }
 
 }
 
