@@ -1,9 +1,10 @@
 import express from 'express';
 const router = express.Router();
 
-import articleCtrl from '../controllers/comment.controller';
+import commentCtrl from '../controllers/comment.controller';
 
 
-router.post('/articles/:id/comment', articleCtrl.createComment);
+router.post('/articles/:id/comment', commentCtrl.createComment);
+router.post('/gifs/:id/comment', commentCtrl.createComment);
 
 export default router;
