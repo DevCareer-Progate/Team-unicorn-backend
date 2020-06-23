@@ -12,7 +12,8 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     username: {
         type: String,
@@ -25,6 +26,10 @@ const userSchema = new Schema({
     isAdmin: {
         type: Boolean,
         required: true
+    },
+    comment: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'comment'
     }
 })
 

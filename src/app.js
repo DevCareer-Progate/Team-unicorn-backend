@@ -6,6 +6,7 @@ import userRoute from '../routes/user.route';
 import profileRoute from '../routes/profile.route';
 import gifRoute from '../routes/gif.route';
 import articleRoute from '../routes/articles.route';
+import commentRoute from '../routes/comment.route';
 
 import mongoose from 'mongoose';
 
@@ -32,6 +33,7 @@ app.use('/', userRoute);
 app.use('/', profileRoute);
 app.use('/', gifRoute);
 app.use('/', articleRoute);
+app.use('/', commentRoute);
 
 const PORT = process.env.PORT || 4001;
 
