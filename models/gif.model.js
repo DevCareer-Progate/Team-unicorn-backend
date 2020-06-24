@@ -2,11 +2,6 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const gifSchema = new Schema({
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
-        required: true
-    },
     title: {
         type: String,
         required: true
@@ -14,6 +9,10 @@ const gifSchema = new Schema({
     image: {
         type: String,
         required: true
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
     }
 })
 

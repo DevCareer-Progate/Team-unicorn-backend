@@ -26,10 +26,6 @@ const userSchema = new Schema({
     isAdmin: {
         type: Boolean,
         required: true
-    },
-    comment: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'comment'
     }
 })
 
