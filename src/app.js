@@ -40,7 +40,10 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const db = process.env.DATABASE_URI;
+// const db = process.env.DATABASE_URI;
+
+const db = 'mongodb+srv://alaoabiodun10620:alao1996@cluster0-l9ge5.mongodb.net/clonelinkedInDB?retryWrites=true&w=majority'
+
 mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => console.log('MongoDB connected successfully'))
     .catch(err => console.log(err))

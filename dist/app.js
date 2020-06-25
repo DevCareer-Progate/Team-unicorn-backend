@@ -46,8 +46,9 @@ app.use('/docs', _swaggerUiExpress["default"].serve, _swaggerUiExpress["default"
 app.use(_express["default"].urlencoded({
   extended: true
 }));
-app.use(_express["default"].json());
-var db = process.env.DATABASE_URI;
+app.use(_express["default"].json()); // const db = process.env.DATABASE_URI;
+
+var db = 'mongodb+srv://alaoabiodun10620:alao1996@cluster0-l9ge5.mongodb.net/clonelinkedInDB?retryWrites=true&w=majority';
 
 _mongoose["default"].connect(db, {
   useUnifiedTopology: true,
