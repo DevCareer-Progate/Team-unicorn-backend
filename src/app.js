@@ -10,9 +10,9 @@ import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
     info: {
-        title: 'REST API for my twitter clone Web app',
+        title: 'Team Unicorn Linkedin clone web app API documentation',
         version: '1.0.0',
-        description: 'This is the REST API for my product',
+        description: 'This is documentation consist of the endpoint needed to integrate into frontend design',
     },
     host: 'localhost:5000',
     basePath: '/api'
