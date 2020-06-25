@@ -48,8 +48,8 @@ class ProfileController {
     }
 
     getProfile(req, res, next) {
-        Profile.findById(req.params.id).select('firstname lastname username email _id').then(
-            result => {
+        Profile.findById(req.params.id).then(
+            (result) => {
                 res.status(200).json({
                     status: 200,
                     message: 'success',
@@ -64,7 +64,7 @@ class ProfileController {
                 console.log(err)
                 res.status(400).json({
                     status: 400,
-                    message: 'An error ocuur',
+                    message: 'An error occurred',
                     error: err
                 })
             })
@@ -73,14 +73,13 @@ class ProfileController {
 
     getProfiles(req, res, next) {
         Profile.find({})
-            .then((err, foundObject) => {
-                if (err) return res.json({ status: 400, message: 'There is an error' })
-                res.json({
+            .then((foundObject) => {
+                res.status(200).json({
                     status: 200,
                     data: foundObject
                 })
             })
-            .catch(err => res.json({
+            .catch(err => res.status(400).json({
                 status: 404,
                 data: err
             }))
