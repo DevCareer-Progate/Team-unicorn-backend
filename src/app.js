@@ -7,7 +7,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
     info: {
-        title: 'REST API for my App',
+        title: 'REST API for my twitter clone Web app',
         version: '1.0.0',
         description: 'This is the REST API for my product',
     },
@@ -22,11 +22,11 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options);
 
-import userRoute from '../routes/user.route';
-import profileRoute from '../routes/profile.route';
-import gifRoute from '../routes/gif.route';
-import articleRoute from '../routes/articles.route';
-import commentRoute from '../routes/comment.route';
+import userRoute from './routes/user.route';
+import profileRoute from './routes/profile.route';
+import gifRoute from './routes/gif.route';
+import articleRoute from './routes/articles.route';
+import commentRoute from './routes/comment.route';
 
 import mongoose from 'mongoose';
 
