@@ -1,6 +1,9 @@
+import "@babel/polyfill";
+
 import express from 'express';
 
 const app = express();
+
 
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
